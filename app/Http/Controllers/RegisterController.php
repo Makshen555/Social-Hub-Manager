@@ -20,7 +20,6 @@ class RegisterController extends Controller
             'twoFactorAuth' => 'false'
         ]);
         $user = User::create($attributes);
-        auth()->login($user);
         return redirect('/')->with('success', 'Se cuenta ha sido creada con exito.');;
     }
 }

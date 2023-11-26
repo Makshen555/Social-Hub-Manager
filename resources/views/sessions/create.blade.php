@@ -54,15 +54,9 @@
     </style>
 </head>
 <body>
-<form action="{{ route('register') }}" method="POST">
+<form action="/login" method="POST">
     @csrf
-    <h2>Registro - Social Hub Manager</h2>
-
-    <label for="username">Nombre de usuario:</label>
-    <input type="text" id="username" name="username" required>
-
-    <label for="name">Nombre:</label>
-    <input type="text" id="name" name="name" required>
+    <h2>Inicia sesión - Mini Hackathon ISW811</h2>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>
@@ -70,7 +64,7 @@
     <label for="password">Contraseña:</label>
     <input type="password" id="password" name="password" required>
 
-    <button type="submit" class="button">Registrar</button>
+    <button type="submit" class="button">Iniciar sesión</button>
 </form>
 </body>
 </html>

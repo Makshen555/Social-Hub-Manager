@@ -13,7 +13,15 @@ class Posts extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('posts', function (Blueprint $table) {
+            $table->id();
+            $table->string('user_id');
+            $table->string('title');
+            $table->string('platform');
+            $table->string('content');
+            $table->string('sub_reddit');
+            $table->string('status');
+        });
     }
 
     /**

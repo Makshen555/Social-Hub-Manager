@@ -13,7 +13,11 @@ class SchedulePosts extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('schedule_posts', function (Blueprint $table) {
+            $table->string('user_id');
+            $table->timestamp('day');
+            $table->timestamp('hour');
+        });
     }
 
     /**

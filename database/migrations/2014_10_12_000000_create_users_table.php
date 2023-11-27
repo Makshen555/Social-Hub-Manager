@@ -22,6 +22,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('reddit_token')->nullable();
+            $table->string('linkedin_token')->nullable();
+            $table->string('linkedin_id')->nullable();
         });
     }
 

@@ -16,6 +16,7 @@
             color: #fff;
             text-align: center;
             padding: 50px 0;
+
         }
 
         header h1 {
@@ -65,33 +66,29 @@
             bottom: 0;
             width: 100%;
         }
+        .logout-button {
+        order: -1; /* Esto coloca el .logout-button primero en el orden de visualización */
+        }
     </style>
 </head>
 <body>
 <header>
-    <h1>Social Hub Manager</h1>
-    <p>Maneja tus publicaciones en redes sociales de manera eficiente.</p>
+    <div class="logout-button"> 
+        <form action="/logout" method="POST">
+            @csrf
+            <button type="submit">Salir</button>
+        </form>
+    </div>
+    <div>
+        <h1>Social Hub Manager</h1>
+        <p>Maneja tus publicaciones en redes sociales de manera eficiente.</p>
+    </div>
 </header>
 
-<section id="features">
-    <h2>Características</h2>
-    <ul>
-        <li>Programa publicaciones en diversas redes sociales.</li>
-        <li>Analiza el rendimiento de tus publicaciones.</li>
-        <li>Interfaz intuitiva y fácil de usar.</li>
-    </ul>
-</section>
-
 <section id="cta">
-    <h2>Empieza hoy mismo</h2>
-    <p>Regístrate y descubre cómo Social Hub Manager puede simplificar tu gestión en redes sociales.</p>
-    <a href="register" class="button">Regístrate</a>
-</section>
-
-<section id="cta">
-    <h2>¿Ya tienes cuenta?</h2>
-    <p>¡Inicia sesión!.</p>
-    <a href="login" class="button">Iniciar sesión</a>
+    <h2>LINKEDIN</h2>
+    <p>Share your posts in the social web LinkedIn.</p>
+    <a href="#" class="button">Post in LinkedIn</a>
 </section>
 
 <footer>

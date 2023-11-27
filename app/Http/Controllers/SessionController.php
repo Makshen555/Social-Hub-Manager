@@ -21,7 +21,7 @@ class SessionController extends Controller
             ]);
         }
         session()->regenerate();
-        return redirect('/')->with('success', 'Bienvenido de nuevo!');
+        return redirect('/home')->with('success', 'Bienvenido de nuevo!');
     }
     public function destroy() {
         auth()->logout();

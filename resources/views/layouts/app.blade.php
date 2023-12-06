@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Social Hub Manager</title>
     <style>
         body {
@@ -67,40 +70,17 @@
         }
     </style>
 </head>
-<body>
-<header>
-    <div class="logout-button"> 
-        <form action="/logout" method="POST">
-            @csrf
-            <button type="submit">Salir</button>
-        </form>
+
+<body class="font-sans antialiased">
+    <x-jet-banner />
+
+    <div class="min-h-screen bg-gray-100">
+
+        <!-- Page Content -->
+        <main>
+            {{ $slot }}
+        </main>
     </div>
-    <div>
-        <h1>Social Hub Manager</h1>
-        <p>Maneja tus publicaciones en redes sociales de manera eficiente.</p>
-    </div>
-</header>
-
-<section id="cta">
-    <h2>Posts</h2>
-    <p>Share your posts in a social media. You can choose between LinkedIn, Reddit or Twitter/X.</p>
-    <a href="/postForm" class="button">Share a post</a>
-</section>
-
-<section id="cta">
-    <h2>Schedule</h2>
-    <p>View your pending posts.</p>
-    <a href="#" class="button">View schedule</a>
-</section>
-
-<section id="cta">
-    <h2>History</h2>
-    <p>View your post's history.</p>
-    <a href="#" class="button">View history</a>
-</section>
-
-<footer>
-    <p>&copy; 2023 Social Hub Manager. Todos los derechos reservados.</p>
-</footer>
 </body>
+
 </html>

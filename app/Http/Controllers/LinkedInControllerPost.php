@@ -14,10 +14,6 @@ class LinkedInPostController extends Controller
         return view('linkedin.create_post');
     }
 
-    public function showSchedulePostForm()
-    {
-        return view('linkedin.linkedin_schedule_post');
-    }
     public function store(Request $request)
     {
         $content = $request->input('content');

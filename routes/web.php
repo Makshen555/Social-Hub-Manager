@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HistoryPostController;
 use \App\Http\Controllers\RegisterController;
 use \App\Http\Controllers\SessionController;
 use \App\Http\Controllers\PostController;
@@ -30,3 +31,6 @@ Route::get('/postForm', [PostController::class, 'showForm'])->name('show_Form');
 
 // LINKEDIN
 Route::post('/linkedin/post', [LinkedInControllerPost::class, 'store'])->name('linkedin.store');
+
+// HISTORY PAGE
+Route::get('/history', [HistoryPostController::class, 'showHistory'])->name('history');

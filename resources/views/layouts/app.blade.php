@@ -73,6 +73,18 @@
 
 <body class="font-sans antialiased">
     <x-jet-banner />
+    <header style="display: grid;grid-template-columns: auto 2fr;align-items: center;">
+        <div class="logout-button"> 
+            <form action="/logout" method="POST">
+                @csrf
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        <div>
+            <h1><a href="/home">Social Hub Manager</a></h1>
+            <p>Maneja tus publicaciones en redes sociales de manera eficiente.</p>
+        </div>
+    </header>
 
     <div class="min-h-screen bg-gray-100">
 
@@ -80,6 +92,10 @@
         <main>
             @yield('content')
         </main>
+
+        <footer>
+            <p>&copy; 2023 Social Hub Manager. Todos los derechos reservados.</p>
+        </footer>
     </div>
 </body>
 

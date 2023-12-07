@@ -68,18 +68,18 @@
     </style>
 </head>
 <body>
-<header>
-    <div class="logout-button"> 
-        <form action="/logout" method="POST">
-            @csrf
-            <button type="submit">Salir</button>
-        </form>
-    </div>
-    <div>
-        <h1>Social Hub Manager</h1>
-        <p>Maneja tus publicaciones en redes sociales de manera eficiente.</p>
-    </div>
-</header>
+    <header style="display: grid;grid-template-columns: auto 2fr;align-items: center;">
+        <div class="logout-button"> 
+            <form action="/logout" method="POST">
+                @csrf
+                <button type="submit">Logout</button>
+            </form>
+        </div>
+        <div>
+            <h1><a href="/home">Social Hub Manager</a></h1>
+            <p>Maneja tus publicaciones en redes sociales de manera eficiente.</p>
+        </div>
+    </header>
 
 <section id="cta">
     <h2>Posts</h2>
@@ -96,7 +96,7 @@
 <section id="cta">
     <h2>History</h2>
     <p>View your post's history.</p>
-    <a href="#" class="button">View history</a>
+    <a href="/history" class="button">View history</a>
 </section>
 
 <footer>

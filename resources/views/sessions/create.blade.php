@@ -56,7 +56,7 @@
 <body>
 <form action="/login" method="POST">
     @csrf
-    <h2>Inicia sesión - Mini Hackathon ISW811</h2>
+    <h2>Inicia sesión</h2>
 
     <label for="email">Email:</label>
     <input type="email" id="email" name="email" required>

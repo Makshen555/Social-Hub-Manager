@@ -1,19 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    @inertia
     <div class="container">
-        <h2>Nuevo Post</h2>
-        <form action="{{ route('linkedin.store') }}" method="post">
+        <h2>New Post</h2>
+        <form action="{{ route('linkedin.store') }}" method="post" id="cta">
             @csrf
 
             <div class="form-group">
-                <label for="title">Título:</label>
+                <label for="title">Tittle:</label>
                 <input type="text" name="title" class="form-control" required>
             </div>
 
             <div class="form-group">
-                <label for="platform">Plataforma:</label>
+                <label for="platform">Plataform:</label>
                 <select name="platform" class="form-control" required>
                     <option value="LinkedIn">LinkedIn</option>
                     <option value="Reddit">Reddit</option>
@@ -22,24 +21,29 @@
             </div>
 
             <div class="form-group">
-                <label for="content">Contenido:</label>
+                <label for="content">Content:</label>
                 <textarea name="content" class="form-control" required></textarea>
             </div>
 
             <div class="form-group" id="textRedditGroup" style="display: none;">
-                <label for="text_reddit">Texto específico para Reddit:</label>
+                <label for="text_reddit">Text for Reddit:</label>
                 <textarea name="text_reddit" class="form-control"></textarea>
             </div>
 
             <div class="form-group">
-                <label for="status">Estado:</label>
+                <label for="status">Status:</label>
                 <select name="status" class="form-control" required>
-                    <option value="Activo">Activo</option>
-                    <option value="Inactivo">Inactivo</option>
+                    <option value="Post">Post</option>
+                    <option value="Queue">Add to queue</option>
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary">Guardar</button>
+            <div class="form-group" id="dateSelect" style="display: none;">
+                <label for="scheduled_date">Schedule Date:</label>
+                <input type="date" name="scheduled_date" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Post</button>
         </form>
     </div>
 
@@ -53,6 +57,19 @@
                     textRedditGroup.style.display = 'block';
                 } else {
                     textRedditGroup.style.display = 'none';
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var statusSelect = document.querySelector('select[name="status"]');
+            var dateSelect = document.getElementById('dateSelect');
+
+            statusSelect.addEventListener('change', function() {
+                if (this.value === 'Post') {
+                    dateSelect.style.display = 'none';
+                } else {
+                    dateSelect.style.display = 'block';
                 }
             });
         });

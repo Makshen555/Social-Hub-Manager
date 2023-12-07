@@ -8,7 +8,7 @@
 
     <title>Social Hub Manager</title>
     <style>
-        body {
+        body main{
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
@@ -22,11 +22,11 @@
 
         }
 
-        header h1 {
+        main header h1 {
             font-size: 2em;
         }
 
-        section {
+        main div {
             max-width: 800px;
             margin: 40px auto;
             text-align: center;
@@ -78,7 +78,7 @@
 
         <!-- Page Content -->
         <main>
-            {{ $slot }}
+            @yield('content')
         </main>
     </div>
 </body>

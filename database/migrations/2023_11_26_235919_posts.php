@@ -19,8 +19,9 @@ class Posts extends Migration
             $table->string('title');
             $table->string('platform');
             $table->string('content');
-            $table->string('sub_reddit');
+            $table->string('sub_reddit')->nullable();
             $table->string('status');
+            $table->timestamps();
         });
     }
 

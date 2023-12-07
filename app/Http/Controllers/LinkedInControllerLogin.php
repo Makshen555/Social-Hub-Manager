@@ -9,7 +9,7 @@ use GuzzleHttp\Client;
 use App\Models\User;
 use Illuminate\Support\Facades\Http;
 
-class LinkedInLoginController extends Controller
+class LinkedInControllerLogin extends Controller
 {
     protected $httpClient;
 
